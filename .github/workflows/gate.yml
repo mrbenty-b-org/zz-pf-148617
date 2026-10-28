@@ -1,0 +1,13 @@
+name: gate
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+  merge_group:
+    paths:
+      - 'src/**'
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "GATE-RAN event=${{ github.event_name }} ref=${{ github.ref }}"
